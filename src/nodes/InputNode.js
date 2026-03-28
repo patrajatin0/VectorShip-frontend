@@ -12,12 +12,12 @@ export const InputNode = ({ id, data }) => {
       id={id}
       title="Input"
       color="#3a86ff"
-      inputs={[]}
+      inputs={[{ id: 'value', top: '50%' }]}
       outputs={[
         { id: 'value', top: '50%' }
       ]}
     >
-      {/* Name Field */}
+
       <div className="mb-2">
         <label className="text-[11px] text-gray-500">Name:</label>
         <input
@@ -28,7 +28,6 @@ export const InputNode = ({ id, data }) => {
         />
       </div>
 
-      {/* Type Field */}
       <div>
         <label className="text-[11px] text-gray-500">Type:</label>
         <select

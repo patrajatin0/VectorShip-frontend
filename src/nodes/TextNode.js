@@ -7,7 +7,7 @@ export const TextNode = ({ id, data }) => {
   const [nodeSize, setNodeSize] = useState({ width: 200, height: 80 });
   const textareaRef = useRef(null);
 
-  // ✅ Part 3A — Auto resize width & height when text changes
+
   useEffect(() => {
     if (textareaRef.current) {
       const textLength = currText.length;
@@ -20,7 +20,7 @@ export const TextNode = ({ id, data }) => {
     }
   }, [currText]);
 
-  // ✅ Part 3B — Detect {{ variable }} and create handles
+
   useEffect(() => {
     const regex = /\{\{\s*(\w+)\s*\}\}/g;
     const found = [];
@@ -44,16 +44,16 @@ export const TextNode = ({ id, data }) => {
     <div
       className="bg-white rounded-lg border border-gray-300 shadow-md relative"
       style={{
-        width: nodeSize.width,       // kept inline — dynamic value
-        minHeight: nodeSize.height,  // kept inline — dynamic value
+        width: nodeSize.width,
+        minHeight: nodeSize.height,
       }}
     >
-      {/* Node Header */}
+
       <div className="bg-[#1C2536] text-white px-2.5 py-1.5 rounded-t-lg font-bold text-[13px]">
         Text
       </div>
 
-      {/* Node Body */}
+
       <div className="p-2.5">
         <label className="text-[11px] text-gray-500">Text:</label>
         <textarea
@@ -78,7 +78,6 @@ export const TextNode = ({ id, data }) => {
           rows={currText.split('\n').length || 1}
         />
 
-        {/* Show detected variables */}
         {variables.length > 0 && (
           <div className="mt-2">
             <span className="text-[10px] text-gray-400">
@@ -98,7 +97,7 @@ export const TextNode = ({ id, data }) => {
         )}
       </div>
 
-      {/* ✅ Dynamic LEFT handles — kept inline — top is dynamic */}
+
       {variables.map((variable, index) => (
         <Handle
           key={variable}
@@ -112,7 +111,7 @@ export const TextNode = ({ id, data }) => {
         />
       ))}
 
-      {/* ✅ Fixed RIGHT handle — output */}
+
       <Handle
         type="source"
         position={Position.Right}
