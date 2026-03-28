@@ -8,7 +8,7 @@ export const LLMNode = ({ id, data }) => {
       title="LLM"
       color="#4f772d"
       inputs={[
-        // { id: 'system', top: '33%' },
+        { id: 'system', top: '33%' },
         { id: 'prompt', top: '66%' },
       ]}
       outputs={[
