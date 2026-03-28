@@ -1,6 +1,6 @@
 // draggableNode.js
 
-export const DraggableNode = ({ type, label }) => {
+export const DraggableNode = ({ type, label, color }) => {
   const onDragStart = (event, nodeType) => {
     const appData = { nodeType }
     event.target.style.cursor = 'grabbing';
@@ -18,7 +18,6 @@ export const DraggableNode = ({ type, label }) => {
         flex
         items-center
         rounded-lg
-        bg-[#1C2536]
         justify-center
         flex-col
         hover:opacity-90
@@ -27,6 +26,7 @@ export const DraggableNode = ({ type, label }) => {
         duration-150
         select-none
       `}
+      style={{ backgroundColor: color || '#0e3c92' }}
       onDragStart={(event) => onDragStart(event, type)}
       onDragEnd={(event) => (event.target.style.cursor = 'grab')}
       draggable

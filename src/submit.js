@@ -21,9 +21,9 @@ export const SubmitButton = () => {
 
             alert(
                 `Pipeline Results:\n\n` +
-                `📊 Number of Nodes: ${data.num_nodes}\n` +
-                `🔗 Number of Edges: ${data.num_edges}\n` +
-                `✅ Is DAG: ${data.is_dag ? 'Yes' : 'No'}`
+                ` Number of Nodes: ${data.num_nodes}\n` +
+                ` Number of Edges: ${data.num_edges}\n` +
+                `Is DAG: ${data.is_dag ? 'Yes' : 'No'}`
             );
 
         } catch (error) {
